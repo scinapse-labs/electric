@@ -54,7 +54,7 @@ defmodule Electric.Replication.Eval.PgQueryFuzzTest do
   @tables ~w[t1 t2 t3 t4 t5 parent child users items orders]
   @columns ~w[id name value parent_id status]
 
-  @moduletag timeout: :infinity
+  @moduletag timeout: :infinity, slow: true
 
   # ============================================================================
   # Full pipeline fuzz tests (Shape.new)
@@ -3168,7 +3168,6 @@ defmodule Electric.Replication.Eval.PgQueryFuzzTest do
     property "|| operator" do
       check all(
               root <- exotic_table_gen(),
-              tbl <- exotic_table_gen(),
               val <- string(:alphanumeric, min_length: 1, max_length: 10),
               max_runs: @iterations
             ) do
