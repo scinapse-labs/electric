@@ -1,5 +1,11 @@
 # @core/sync-service
 
+## 1.4.14
+
+### Patch Changes
+
+- 40f15e0: Remove additional trivial OTel spans from shape lifecycle
+
 ## 1.4.13
 
 ### Patch Changes
